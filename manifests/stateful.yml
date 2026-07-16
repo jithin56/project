@@ -4,7 +4,7 @@ metadata:
   name: mysql
   namespace: dev
 spec:
-  serviceName: svc-database
+  serviceName: mysqldb
   replicas: 1
   selector:
     matchLabels:
@@ -19,6 +19,7 @@ spec:
           image: shaikmustafa/phpapp:dbimage
           ports:
             - containerPort: 3306
+              name: mysql
           
           resources:
             limits:
